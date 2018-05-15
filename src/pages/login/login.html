@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar hideBackButton>
+    <ion-title>login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding="true" class="has-header">
+	<div>
+      <img src="assets/imgs/logo.png" style="display: block; width: 70%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+	<form>
+		<ion-list>
+			<div class="spacer" style="height: 20px;"></div>
+			<ion-item>
+				<ion-label fixed>Email</ion-label>
+				<ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
+			</ion-item>
+			
+			<ion-item>
+				<ion-label fixed>Password</ion-label>
+				<ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+			</ion-item>
+			
+			<div padding>
+				<button ion-button color="danger" block (click)="login()">Login</button>
+			</div>
+	  </ion-list>
+    </form>
+</ion-content>

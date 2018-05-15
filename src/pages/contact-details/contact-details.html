@@ -1,0 +1,225 @@
+<ion-header>
+    <ion-navbar hideBackButton>
+      <ion-buttons start>
+        <button ion-button icon-only (click)="contactList()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>Contact Details</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="editContact()">
+          <ion-icon name="create"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+
+  <ion-content>
+    <div ion-fixed style="width:100%; background-color:#FFF;">
+      <ion-card> 
+        <ion-item>
+          <ion-avatar item-start>
+            <img [src]="avatar" *ngIf="avatar">  
+          </ion-avatar>
+          <h2>{{ contactName }}</h2>
+          <p>{{ townName }}
+            <span style="float:left;">{{ state }}</span>
+            <button ion-button style="float:right;" color="secondary" (click)="plantations()" round>Plantations</button>
+          </p>
+        </ion-item>
+      </ion-card>
+    </div>
+
+    <ion-list style="margin-top:100px;">
+      <ion-item>
+        <button ion-button full style="text-align:center;padding-bottom:20px;padding-top:20px;" color="danger" (click)="homeMap()">
+          <ion-icon style="margin-right:7px;" name="map"></ion-icon> Home Map
+        </button>
+      </ion-item>
+
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>Phone 1</ion-label>
+        <ion-label style="padding-bottom:3px;">
+          <a href="tel:{{ p_phone }}" *ngIf="p_phone" style="text-decoration:none;">
+            <ion-icon name="call" color="danger"></ion-icon> {{ p_phone }}
+          </a>  
+          <span style="float:right;">
+            <ion-icon style="color:green" *ngIf="p_phone_sync_yes" name="checkmark"></ion-icon>
+            <ion-icon style="color:red" *ngIf="p_phone_sync_no" name="remove"></ion-icon>
+          </span>
+        </ion-label> 
+      </ion-item>
+  
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>Phone 2</ion-label>
+        <ion-label style="padding-bottom:3px;">
+          <a href="tel:{{ p_phone2 }}" *ngIf="p_phone2" style="text-decoration:none;">
+            <ion-icon name="call" color="danger"></ion-icon> {{ p_phone2 }}
+          </a>
+          <span style="float:right;">
+            <ion-icon style="color:green" *ngIf="p_phone2_sync_yes" name="checkmark"></ion-icon>
+            <ion-icon style="color:red" *ngIf="p_phone2_sync_no" name="remove"></ion-icon>
+          </span>
+        </ion-label> 
+      </ion-item>
+  
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>Phone 3</ion-label>
+        <ion-label style="padding-bottom:3px;">
+          <a href="tel:{{ p_phone3 }}" *ngIf="p_phone3" style="text-decoration:none;">
+            <ion-icon name="call" color="danger"></ion-icon> {{ p_phone3 }}
+          </a>
+          <span style="float:right;">
+            <ion-icon style="color:green" *ngIf="p_phone3_sync_yes" name="checkmark"></ion-icon>
+            <ion-icon style="color:red" *ngIf="p_phone3_sync_no" name="remove"></ion-icon>
+          </span>
+        </ion-label> 
+      </ion-item>
+  
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>Mobile Payement</ion-label>
+        <ion-label style="padding-bottom:3px;">
+          <a href="tel:{{ p_phone4 }}" *ngIf="p_phone4" style="text-decoration:none;">
+            <ion-icon name="call" color="danger"></ion-icon> {{ p_phone4 }}
+          </a>
+          <span style="float:right;">
+            <ion-icon style="color:green" *ngIf="p_phone4_sync_yes" name="checkmark"></ion-icon>
+            <ion-icon style="color:red" *ngIf="p_phone4_sync_no" name="remove"></ion-icon>
+          </span>
+        </ion-label> 
+      </ion-item>
+  
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>eMail Business</ion-label>
+        <ion-label style="padding-bottom:3px;">
+          <a href="mailto:{{ p_email2 }}" *ngIf="p_email2" style="text-decoration:none;">
+            <ion-icon name="mail" color="danger"></ion-icon> {{ p_email2 }}
+          </a>
+          <span style="float:right;">
+            <ion-icon style="color:green" *ngIf="p_email2_sync_yes" name="checkmark"></ion-icon>
+            <ion-icon style="color:red" *ngIf="p_email2_sync_no" name="remove"></ion-icon>
+          </span>
+        </ion-label> 
+      </ion-item>
+  
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>eMail Private</ion-label>
+        <ion-label style="padding-bottom:3px;">
+          <a href="mailto:{{ p_email1 }}" *ngIf="p_email1" style="text-decoration:none;">
+            <ion-icon name="mail" color="danger"></ion-icon> {{ p_email1 }}
+          </a>
+          <span style="float:right;">
+            <ion-icon style="color:green" *ngIf="p_email1_sync_yes" name="checkmark"></ion-icon>
+            <ion-icon style="color:red" *ngIf="p_email1_sync_no" name="remove"></ion-icon>
+          </span>
+        </ion-label> 
+      </ion-item>
+  
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>eMail iCollect.live</ion-label>
+        <ion-label style="padding-bottom:3px;">
+          <a href="mailto:{{ p_email3 }}" *ngIf="p_email3" style="text-decoration:none;">
+            <ion-icon name="mail" color="danger"></ion-icon> {{ p_email3 }}
+          </a>
+          <span style="float:right;">
+            <ion-icon style="color:green" *ngIf="p_email3_sync_yes" name="checkmark"></ion-icon>
+            <ion-icon style="color:red" *ngIf="p_email3_sync_no" name="remove"></ion-icon>
+          </span>
+        </ion-label> 
+      </ion-item>
+  
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>Member of Coop</ion-label>
+        <ion-label style="padding-bottom:3px;">{{ id_coop_member }}</ion-label> 
+      </ion-item>
+  
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>Coop Member No.</ion-label>
+        <ion-label style="padding-bottom:3px;">{{ id_coop_member_no }}
+          <span style="float:right;">
+            <ion-icon style="color:green" *ngIf="id_coop_member_no_sync_yes" name="checkmark"></ion-icon>
+            <ion-icon style="color:red" *ngIf="id_coop_member_no_sync_no" name="remove"></ion-icon>
+          </span>
+        </ion-label> 
+      </ion-item>
+  
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>State</ion-label>
+        <ion-label style="padding-bottom:3px;">{{ state }}</ion-label> 
+      </ion-item>
+  
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>District</ion-label>
+        <ion-label style="padding-bottom:3px;">{{ district }}</ion-label> 
+      </ion-item>
+  
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>Town</ion-label>
+        <ion-label style="padding-bottom:3px;">{{ town_name }}
+          <span style="float:right;">
+            <ion-icon style="color:green" *ngIf="town_name_sync_yes" name="checkmark"></ion-icon>
+            <ion-icon style="color:red" *ngIf="town_name_sync_no" name="remove"></ion-icon>
+          </span>
+        </ion-label>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>Village</ion-label>
+        <ion-label style="padding-bottom:3px;">{{ p_street1 }}
+          <span style="float:right;">
+            <ion-icon style="color:green" *ngIf="p_street1_sync_yes" name="checkmark"></ion-icon>
+            <ion-icon style="color:red" *ngIf="p_street1_sync_no" name="remove"></ion-icon>
+          </span>
+        </ion-label> 
+      </ion-item>
+  
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>Gender</ion-label>
+        <ion-label style="padding-bottom:3px;">{{ gender }}
+          <span style="float:right;">
+            <ion-icon style="color:green" *ngIf="gender_sync_yes" name="checkmark"></ion-icon>
+            <ion-icon style="color:red" *ngIf="gender_sync_no" name="remove"></ion-icon>
+          </span>
+        </ion-label>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>Birthdate</ion-label>
+        <ion-label style="padding-bottom:3px;">{{ birth_date }}
+          <span style="float:right;">
+            <ion-icon style="color:green" *ngIf="birth_date_sync_yes" name="checkmark"></ion-icon>
+            <ion-icon style="color:red" *ngIf="birth_date_sync_no" name="remove"></ion-icon>
+          </span>
+        </ion-label> 
+      </ion-item>
+  
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>Language</ion-label>
+        <ion-label style="padding-bottom:3px;">{{ national_lang }}
+          <span style="float:right;">
+            <ion-icon style="color:green" *ngIf="national_lang_sync_yes" name="checkmark"></ion-icon>
+            <ion-icon style="color:red" *ngIf="national_lang_sync_no" name="remove"></ion-icon>
+          </span>
+        </ion-label> 
+      </ion-item>
+  
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>Notes</ion-label>
+        <ion-label style="padding-bottom:3px;">{{ notes }}
+          <span style="float:right;">
+            <ion-icon style="color:green" *ngIf="notes_sync_yes" name="checkmark"></ion-icon>
+            <ion-icon style="color:red" *ngIf="notes_sync_no" name="remove"></ion-icon>
+          </span>
+        </ion-label> 
+      </ion-item>
+
+      <ion-item>
+        <button ion-button full style="text-align:center;padding-bottom:20px;padding-top:20px;" color="danger" (click)="documents()">
+          <ion-icon style="margin-right:7px;" name="document"></ion-icon> Documents
+        </button>
+      </ion-item>
+  
+    </ion-list>
+  </ion-content>
+  

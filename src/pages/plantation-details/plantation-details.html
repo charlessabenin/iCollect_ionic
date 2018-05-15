@@ -1,0 +1,118 @@
+<ion-header>
+    <ion-navbar hideBackButton>
+      <ion-buttons start>
+        <button ion-button icon-only (click)="plantationList()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>Plantation Details</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="editPlantation()">
+          <ion-icon name="create"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  <ion-content>
+    <div ion-fixed style="width:100%; background-color:#FFF;"> 
+      <ion-card> 
+        <ion-item>
+          <ion-avatar item-start>
+            <img [src]="avatar" *ngIf="avatar"> 
+          </ion-avatar>
+          <h2>{{ contactName }}</h2>
+          <p>
+              {{ townName }}
+            <button ion-button style="float:right;" color="default" (click)="contactDetails()" round>Contact</button>
+          </p>
+        </ion-item>
+      </ion-card>
+    </div>
+
+    <ion-list style="margin-top:100px;">
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>Field name / Number</ion-label>
+        <ion-label>{{ fieldNumber }}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <button ion-button full style="text-align:center;padding-top:20px;padding-bottom:20px;" color="danger" (click)="CollectionPoint()">
+          <ion-icon style="margin-right:7px;" name="pin"></ion-icon> Collection Point
+        </button>
+      </ion-item>
+
+      <ion-item *ngIf="saved_plantation">
+        <button ion-button full style="text-align:center;padding-top:20px;padding-bottom:20px;" color="danger" (click)="plantationSurface()">
+          <ion-icon style="margin-right:7px;" name="map"></ion-icon> Plantation surface
+        </button>
+      </ion-item>
+
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>Hectres</ion-label>
+        <ion-label>{{ surface_ha }}
+          <span style="float:right;">
+            <ion-icon style="color:green" *ngIf="surface_ha_sync_yes" name="checkmark"></ion-icon>
+            <ion-icon style="color:red" *ngIf="surface_ha_sync_no" name="remove"></ion-icon>
+          </span>
+        </ion-label>  
+      </ion-item>
+    
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>Acres</ion-label>
+        <ion-label>{{ area_acres }}
+          <span style="float:right;">
+            <ion-icon style="color:green" *ngIf="area_acres_sync_yes" name="checkmark"></ion-icon>
+            <ion-icon style="color:red" *ngIf="area_acres_sync_no" name="remove"></ion-icon>
+          </span>
+        </ion-label> 
+      </ion-item>
+
+      <ion-item>
+          <img [src]="image" *ngIf="image" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;" />
+      </ion-item>
+
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>First use</ion-label>
+        <ion-label>{{ year_creation }}
+          <span style="float:right;">
+            <ion-icon style="color:green" *ngIf="year_creation_sync_yes" name="checkmark"></ion-icon>
+            <ion-icon style="color:red" *ngIf="year_creation_sync_no" name="remove"></ion-icon>
+          </span>
+        </ion-label> 
+      </ion-item>
+
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>Property</ion-label>
+        <ion-label>{{ property }}
+          <span style="float:right;">
+            <ion-icon style="color:green" *ngIf="property_sync_yes" name="checkmark"></ion-icon>
+            <ion-icon style="color:red" *ngIf="property_sync_no" name="remove"></ion-icon>
+          </span>
+        </ion-label> 
+      </ion-item>
+
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>Title Deed</ion-label>
+        <ion-label>{{ titledeed }}
+          <span style="float:right;">
+            <ion-icon style="color:green" *ngIf="titledeed_sync_yes" name="checkmark"></ion-icon>
+            <ion-icon style="color:red" *ngIf="titledeed_sync_no" name="remove"></ion-icon>
+          </span>
+        </ion-label> 
+      </ion-item>
+  
+      <ion-item>
+        <ion-label style="padding-bottom:7px;" stacked>Notes</ion-label>
+        <ion-label>{{ notes }}
+          <span style="float:right;">
+            <ion-icon style="color:green" *ngIf="notes_sync_yes" name="checkmark"></ion-icon>
+            <ion-icon style="color:red" *ngIf="notes_sync_no" name="remove"></ion-icon>
+          </span>
+        </ion-label> 
+      </ion-item>
+  
+    </ion-list>
+  </ion-content>
+  

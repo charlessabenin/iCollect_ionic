@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar hideBackButton>
+      <ion-title>Plantation Surface</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="plantationDetail()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-card ion-fixed> 
+      <ion-item>
+        <ion-avatar item-start>
+          <img [src]="avatar" *ngIf="avatar">  
+        </ion-avatar>
+        <h2>{{ contactName }}</h2>
+        <p>{{ townName }} <strong style="float:right;color:red;">{{ area_acres }}, {{ surface_ha }}</strong></p>
+      </ion-item>
+    </ion-card>
+  
+    <div #plantation id="plantation"></div>
+  </ion-content>
+  

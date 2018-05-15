@@ -1,0 +1,29 @@
+page-plantation-surface {
+    .scroll {
+        height: 100%
+    }
+
+    #surfaceMap {
+        width: 100%;
+        height: 80%;
+    }
+
+    #area {
+        float:right;
+        color: #000000;
+        position: fixed;
+        bottom: 20%;
+        left: 25px;
+        z-index: 9999;
+        background-color: #FFF;
+        border-radius: 5%;
+        padding:3px;
+    }
+
+    .topCard {
+        margin-top:0;
+        margin-left:0;
+        margin-right:0;
+        width:100%;
+    }
+}

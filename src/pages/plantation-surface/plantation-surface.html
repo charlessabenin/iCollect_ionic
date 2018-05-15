@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar hideBackButton>
+    <ion-title>Plantation Surface</ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="editPlantation()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end *ngIf="save_plantation">
+        <button ion-button icon-only (click)="savePlantation()">
+         DONE
+      </button>
+    </ion-buttons>
+    <ion-buttons end *ngIf="save_location">
+        <button ion-button icon-only (click)="saveLocation()">
+         DONE
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card class="topCard"> 
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="avatar" *ngIf="avatar">  
+      </ion-avatar>
+      <h2>{{ contactName }}</h2>
+      <p>{{ townName }}</p>
+      <button color="default" ion-button (click)="Draw()" round>Draw</button>
+      <button color="default" ion-button (click)="wayPoint()" round>Way Point</button>
+      <button id="delete-button" style="float:right;" ion-button color="default" round>
+        <ion-icon style="margin-right:7px;" name="trash"></ion-icon> Shape
+      </button>
+    </ion-item>
+  </ion-card>
+  
+  <div #surfaceMap id="surfaceMap"></div>
+  <div id="area"></div>
+
+  <ion-fab bottom left *ngIf="add_location">
+    <button ion-fab color="default" (click)="addLocation()">
+      <ion-icon name="pin"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

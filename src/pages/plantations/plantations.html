@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar hideBackButton>
+      <ion-buttons start>
+          <button ion-button icon-only (click)="contactDetail()">
+            <ion-icon name="arrow-back"></ion-icon>
+          </button>
+        </ion-buttons>
+    <ion-title>Plantations</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addPlantation()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+  
+<ion-content padding>
+  <div ion-fixed style="width:100%; background-color:#FFF;">
+    <ion-card> 
+      <ion-item>
+        <ion-avatar item-start>
+          <img [src]="avatar" *ngIf="avatar">  
+        </ion-avatar>
+        <h2>{{ contactName }}</h2>
+        <p>{{ townName }}</p>
+      </ion-item>
+    </ion-card>
+  
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  </div>
+  
+  <ion-list style="margin-top:120px;">
+    <button ion-item *ngFor="let item of plantations" (click)="itemPlantation(item)">
+      <ion-avatar item-left>
+        <img src="assets/imgs/land.png">
+      </ion-avatar> 
+      <h2>{{item.name_town}}</h2>
+      <p>Surface : {{item.surface_ha}}, Area : {{item.area_acres}}</p>
+    </button>  
+  </ion-list>
+
+  <div *ngIf="stored_plant" style="margin-top:80px; text-align: center;">
+    <div>
+      <ion-icon name="warning" style="font-size: 92px; color:lightslategrey;"></ion-icon>
+    </div>
+    <strong>No plantations stored</strong>
+  </div>
+</ion-content>

@@ -1,0 +1,8 @@
+{
+  "name": "iCollect",
+  "app_id": "c05474bf",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

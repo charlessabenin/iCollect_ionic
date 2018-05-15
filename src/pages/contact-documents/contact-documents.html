@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar hideBackButton>
+    <ion-title>Documents</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="contactDetail()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div ion-fixed style="width:100%; background-color:#FFF;">
+    <ion-card (click)="contactDetail()"> 
+      <ion-item>
+        <ion-avatar item-start>
+          <img [src]="avatar" *ngIf="avatar">  
+        </ion-avatar>
+        <h2>{{ FullName }}</h2>
+        <p>{{ townName }}</p>
+      </ion-item>
+    </ion-card>
+  </div>
+ 
+  <ion-list style="margin-top:80px;">
+    <button ion-item *ngFor="let item of documents" (click)="editDocument(item)">
+      <img src="{{ item.docLink }}">
+      <h2>{{ item.doc_type }}</h2>
+      <strong><ion-icon name="calendar"></ion-icon> {{ item.doc_date }}</strong>
+      <p>{{ item.description }}</p>
+    </button>  
+  </ion-list>
+
+  <div *ngIf="stored_docs" style="margin-top:80px; text-align: center;">
+    <div>
+      <ion-icon name="warning" style="font-size: 92px; color:lightslategrey;"></ion-icon>
+    </div>
+    <strong>No documents stored</strong>
+  </div>
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar hideBackButton>
+    <ion-title>Collection Point</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="plantationDetail()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card ion-fixed> 
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="avatar" *ngIf="avatar">  
+      </ion-avatar>
+      <h2>{{ contactName }}</h2>
+      <p>{{ townName }}</p>
+    </ion-item>
+  </ion-card>
+
+  <div #map id="map"></div>
+</ion-content>

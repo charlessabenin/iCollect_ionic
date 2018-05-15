@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-navbar hideBackButton>
+    <ion-title>Edit Plantation</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="updatePlantation()">Done</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+  
+  
+  <ion-content padding>
+    <div ion-fixed style="width:100%; background-color:#FFF;">
+      <ion-card> 
+        <ion-item>
+          <ion-avatar item-start>
+            <img [src]="avatar" *ngIf="avatar"> 
+          </ion-avatar>
+          <h2>{{ contactName }}</h2>
+          <p>{{ townName }}</p>
+        </ion-item>
+      </ion-card>
+    </div>
+    
+    <form>
+      <ion-list style="margin-top:100px;">
+        <ion-item>
+          <ion-label style="text-align:center;"> Field name / Number </ion-label> 
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>CoordX</ion-label>
+          <ion-input type="number" [(ngModel)]="coordx" name="coordx">{{ coordx }}</ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label floating>CoordY</ion-label>
+          <ion-input type="number" [(ngModel)]="coordy" name="coordy">{{ coordy }}</ion-input>
+        </ion-item>
+
+        <ion-item>
+          <button ion-button full style="text-align:center;padding-top:20px;padding-bottom:20px;" color="danger" (click)="CollectionPoint()">
+            <ion-icon style="margin-right:7px;" name="pin"></ion-icon> Get current location
+          </button>
+        </ion-item>
+
+        <ion-item>
+          <button ion-button full style="text-align:center;padding-top:20px;padding-bottom:20px;" color="danger" (click)="PlantationSurface()">
+            <ion-icon style="margin-right:7px;" name="map"></ion-icon> Draw Plantation surface
+          </button> 
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="padding-bottom:7px;" stacked>Hectres</ion-label>
+          <ion-input type="number" [(ngModel)]="surface_ha" name="surface_ha">{{ surface_ha }}</ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label style="padding-bottom:7px;" stacked>Acres</ion-label>
+          <ion-input type="number" [(ngModel)]="area_acres" name="area_acres">{{ area_acres }}</ion-input>
+        </ion-item>
+
+        <ion-item>
+          <button ion-button full style="text-align:center;padding-top:20px;padding-bottom:20px;" color="danger" (click)="plantationDocuments()">
+            <ion-icon style="margin-right:7px;" name="camera"></ion-icon> Photo Plantation
+          </button>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="padding-bottom:7px;" stacked>First use</ion-label>
+          <ion-input type="date" [(ngModel)]="year_creation" name="year_creation">{{ year_creation }}</ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="padding-bottom:7px;" stacked>Property</ion-label>
+          <ion-select [(ngModel)]="property" name="property">
+            <ion-option *ngFor="let item of propertyList" value="{{item.id_property}}">{{item.property_name}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="padding-bottom:7px;" stacked>Title Deed</ion-label>
+          <ion-select [(ngModel)]="titledeed" name="titledeed">
+            <ion-option *ngFor="let item of titledeedList" value="{{item.titledeed_name}}">{{item.titledeed_name}}</ion-option>
+          </ion-select>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label style="padding-bottom:7px;" stacked>Notes</ion-label>
+          <ion-input type="text" [(ngModel)]="notes" name="notes">{{ notes }}</ion-input>
+        </ion-item>
+      </ion-list>
+    </form>
+
+  </ion-content>
+  

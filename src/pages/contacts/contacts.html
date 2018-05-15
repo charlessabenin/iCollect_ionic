@@ -1,0 +1,36 @@
+  <ion-header>
+    <ion-navbar hideBackButton>
+      <ion-title>Contacts List</ion-title>
+      <ion-buttons end>
+        <button ion-button (click)="logout()" style="color:#FFF;">Logout</button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding scrollY="true">
+    <div ion-fixed style="width:100%; background-color:#FFF;">
+      <ion-card (click)="contactDetail()"> 
+        <ion-item>
+          <ion-avatar item-start>
+            <img [src]="avatar" *ngIf="avatar">  
+          </ion-avatar>
+          <h2>{{ FullName }}</h2>
+          <p>{{ Company }}</p>
+        </ion-item>
+      </ion-card>
+  
+      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    </div>
+  
+    <ion-list style="margin-top:120px;">
+      <button ion-item *ngFor="let item of contacts" (click)="itemContact(item)">
+        <ion-avatar item-left>
+          <img src="{{item.photo}}">
+        </ion-avatar>
+        <h2>{{item.name}}</h2>
+        <p>{{item.town_name}}</p>
+      </button>
+    </ion-list>
+
+  </ion-content>
+  
