@@ -87,10 +87,10 @@
             },
             "cordova-plugin-ionic": {
                 "APP_ID": "c05474bf",
-                "CHANNEL_NAME": "Master",
-                "UPDATE_METHOD": "background",
-                "UPDATE_API": "https://api.ionicjs.com",
-                "MAX_STORE": "2"
+                "CHANNEL_NAME": "Test",
+                "UPDATE_METHOD": "background|auto|none",
+                "MAX_STORE": "2",
+                "UPDATE_API": "https://api.ionicjs.com"
             },
             "cordova-plugin-file-transfer": {},
             "cordova-plugin-background-mode": {}

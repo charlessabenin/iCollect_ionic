@@ -87,13 +87,6 @@
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
     </plugin>
-    <plugin name="cordova-plugin-ionic" spec="^2.0.4">
-        <variable name="APP_ID" value="c05474bf" />
-        <variable name="CHANNEL_NAME" value="Master" />
-        <variable name="UPDATE_METHOD" value="background" />
-        <variable name="UPDATE_API" value="https://api.ionicjs.com" />
-        <variable name="MAX_STORE" value="2" />
-    </plugin>
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.16" />
     <plugin name="cordova-plugin-network-information" spec="^1.3.4" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
@@ -101,4 +94,11 @@
     <plugin name="cordova-plugin-x-toast" spec="^2.6.0" />
     <plugin name="cordova-sqlite-storage" spec="^2.1.4" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
+    <plugin name="cordova-plugin-ionic" spec="^2.0.4">
+        <variable name="APP_ID" value="c05474bf" />
+        <variable name="CHANNEL_NAME" value="Test" />
+        <variable name="UPDATE_METHOD" value="background|auto|none" />
+        <variable name="MAX_STORE" value="2" />
+        <variable name="UPDATE_API" value="https://api.ionicjs.com" />
+    </plugin>
 </widget>
