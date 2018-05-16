@@ -10,7 +10,6 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
 
 import { PlantationsPage } from '../plantations/plantations'; 
-import { PlantationSurfacePage } from '../plantation-surface/plantation-surface';
 
 @IonicPage()
 @Component({

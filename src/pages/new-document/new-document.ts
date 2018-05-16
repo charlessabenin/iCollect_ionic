@@ -146,8 +146,6 @@ export class NewDocumentPage {
     let logged_id = this.navParams.get('logged_id');   
     let logged_name = this.navParams.get('logged_name');
     let company_name = this.navParams.get('company_name');
-    let town_name = this.navParams.get('town_name');
-    let name = this.navParams.get('name');
     let id_primary_company = this.navParams.get('id_primary_company'); 
 
     let doc_type = this.doc_type;  
